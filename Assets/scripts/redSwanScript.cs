@@ -39,6 +39,15 @@ public class redSwanScript : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        IProjectile projectile = other.gameObject.GetComponentInChildren<IProjectile>();
+        if (projectile != null)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {

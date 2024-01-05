@@ -30,18 +30,31 @@ public class Robot : MonoBehaviour
         }
         Move();
         processWeaponChanges();
+        processShooting();
+    }
+
+    void processShooting()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            weapons[WeaponSlot.LEFT].Shoot();
+        }
+        if (Input.GetMouseButton(1))
+        {
+            weapons[WeaponSlot.RIGHT].Shoot();
+        }
     }
 
     void processWeaponChanges()
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            currentWeaponLeft = (WeaponType)(((int)currentWeaponLeft + 1) % 2);
+            currentWeaponLeft = (WeaponType)(((int)currentWeaponLeft + 1) % 3);
             SetWeapon(WeaponSlot.LEFT, currentWeaponLeft);
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            currentWeaponRight = (WeaponType)(((int)currentWeaponRight + 1) % 2);
+            currentWeaponRight = (WeaponType)(((int)currentWeaponRight + 1) % 3);
             SetWeapon(WeaponSlot.RIGHT, currentWeaponRight);
         }
     }
@@ -63,8 +76,7 @@ public class Robot : MonoBehaviour
             case WeaponType.SWORD:
                 return Instantiate(swordPrefab);
             case WeaponType.GUN:
-                //return Instantiate(gunPrefab);
-                return Instantiate(nullWeaponPrefab);
+                return Instantiate(gunPrefab);
             case WeaponType.NONE:
                 return Instantiate(nullWeaponPrefab);
             default:

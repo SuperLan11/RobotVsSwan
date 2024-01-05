@@ -1,20 +1,10 @@
 using UnityEngine;
-public class Sword : Weapon
+
+public class Sword : ProjectileWeapon
 {
-    private GameObject pivot;
-    void Start()
+    public override void Update()
     {
-        pivot = transform.parent.gameObject;
-    }
-
-    public override void Shoot()
-    {
-        
-    }
-
-    public override void PointAt(Vector2 target)
-    {
-        float angle = Vector2.SignedAngle(Vector2.up, target - (Vector2)pivot.transform.position);
-        pivot.transform.rotation = Quaternion.Euler(0, 0, angle);
+        base.Update();
+        GetComponent<SpriteRenderer>().enabled = currentCooldown <= 0;
     }
 }
