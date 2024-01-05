@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - projectiles
   - 
   - 
   - 
@@ -40,4 +40,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: background
+    uniqueID: 1739964205
+    locked: 0
+  - name: robot
+    uniqueID: 3778320481
+    locked: 0
+  - name: swan
+    uniqueID: 3098935229
+    locked: 0
+  - name: weapons
+    uniqueID: 866147997
     locked: 0
