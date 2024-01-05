@@ -44,6 +44,6 @@ public class redSwanScript : MonoBehaviour
     {
         animateSwan();
         // slowly move swan towards target
-        transform.position = Vector2.MoveTowards(transform.position, targetObj.position, 0.01f);
+        transform.position = Vector2.MoveTowards(transform.position, targetObj.position, Time.deltaTime);
     }
 }
