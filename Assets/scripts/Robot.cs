@@ -22,15 +22,50 @@ public class Robot : MonoBehaviour
         SetWeapon(WeaponSlot.LEFT, WeaponType.SWORD);
     }
 
+    public static Robot instance;
+    void Awake()
+    {
+        instance = this;
+    }
+
+    public bool editorMode = false;
+
     void Update()
     {
         foreach (WeaponSlot slot in System.Enum.GetValues(typeof(WeaponSlot)))
         {
-            weapons[slot].PointAt(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            if (!editorMode)
+            {
+                weapons[slot].PointAt(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            }
+            else
+            {
+                weapons[slot].ResetDirection();
+            }
         }
-        Move();
-        processWeaponChanges();
-        processShooting();
+
+        if (!editorMode)
+        {
+            Move();
+            processWeaponChanges();
+            processShooting();
+        }
+    }
+
+    public void ShowArmSlots()
+    {
+        foreach (GameObject mount in weaponMounts.Values)
+        {
+            mount.GetComponent<SpriteRenderer>().enabled = true;
+        }
+    }
+    
+    public void HideArmSlots()
+    {
+        foreach (GameObject mount in weaponMounts.Values)
+        {
+            mount.GetComponent<SpriteRenderer>().enabled = false;
+        }
     }
 
     void processShooting()

@@ -9,7 +9,7 @@ public class Projectile : MonoBehaviour, IProjectile
 
     void Start()
     {
-        Destroy(gameObject, 5);
+        Destroy(transform.root.gameObject, 5);
     }
     void Update()
     {

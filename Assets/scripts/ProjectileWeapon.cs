@@ -35,4 +35,9 @@ public class ProjectileWeapon : Weapon
         float angle = Vector2.SignedAngle(Vector2.up, target - (Vector2)pivot.transform.position);
         pivot.transform.rotation = Quaternion.Euler(0, 0, angle);
     }
+
+    public override void ResetDirection()
+    {
+        pivot.transform.rotation = Quaternion.Euler(0, 0, 0);
+    }
 }

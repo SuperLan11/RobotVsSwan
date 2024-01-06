@@ -11,4 +11,9 @@ public class NullWeapon : Weapon
     {
         
     }
+
+    public override void ResetDirection()
+    {
+        
+    }
 }
