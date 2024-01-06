@@ -1,12 +1,23 @@
 using UnityEngine;
 
-public class MissileProjectile : MonoBehaviour, IProjectile
+public class MissileProjectile : BaseProjectile
 {
     private float angle;
-    public void Fire(Vector2 direction, float offset)
+    public int damage;
+    public override void Fire(Vector2 direction, float offset)
     {
         transform.position += (Vector3) direction * offset;
         angle = Vector2.SignedAngle(Vector2.up, direction);
+    }
+
+    public override int GetDamage()
+    {
+        return damage;
+    }
+
+    void Start()
+    {
+        Destroy(gameObject, 5);
     }
 
     public void Update()

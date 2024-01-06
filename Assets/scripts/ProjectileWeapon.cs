@@ -21,7 +21,7 @@ public class ProjectileWeapon : Weapon
         }
         currentCooldown = cooldown;
         GameObject obj = Instantiate(projectilePrefab, pivot.transform.position, pivot.transform.rotation);
-        obj.GetComponentInChildren<IProjectile>().Fire(pivot.transform.up, projectileOffset);
+        obj.GetComponentInChildren<BaseProjectile>().Fire(pivot.transform.up, projectileOffset);
     }
 
     public virtual void Update()

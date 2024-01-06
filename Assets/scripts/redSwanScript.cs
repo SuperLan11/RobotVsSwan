@@ -38,20 +38,13 @@ public class redSwanScript : Swan
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        IProjectile projectile = other.gameObject.GetComponentInChildren<IProjectile>();
-        if (projectile != null)
-        {
-            Destroy(gameObject);
-        }
-    }
+    
 
     // Update is called once per frame
     void Update()
     {
         animateSwan();
         // slowly move swan towards target
-        transform.position = Vector2.MoveTowards(transform.position, targetObj.position, Time.deltaTime);
+        //transform.position = Vector2.MoveTowards(transform.position, targetObj.position, Time.deltaTime);
     }
 }

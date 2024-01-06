@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Robot : MonoBehaviour
+public class Robot : MonoBehaviour, IHealth
 {
     [SerializeField] private GameObject nullWeaponPrefab;
     private Dictionary<WeaponSlot, Weapon> weapons = new();
@@ -28,6 +28,8 @@ public class Robot : MonoBehaviour
         {
             inventory[type] = 0;
         }
+
+        maxHealth = health;
     }
 
     public static Robot instance;
@@ -109,7 +111,7 @@ public class Robot : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
         Vector2 movement = new Vector2(horizontal, vertical);
         //Debug.Log(movement);
-        transform.Translate(movement * speed * Time.deltaTime);
+        GetComponent<Rigidbody2D>().velocity = movement * speed;
     }
 
     private GameObject createWeapon(WeaponType type)
@@ -142,5 +144,32 @@ public class Robot : MonoBehaviour
         weapons[slot] = weaponObject.GetComponentInChildren<Weapon>();
         weaponObject.transform.parent = weaponMounts[slot].transform;
         weaponObject.transform.localPosition = Vector3.zero;
+    }
+
+    public int health;
+    public int GetHealth()
+    {
+        return health;
+    }
+
+    private int maxHealth;
+    public int GetMaxHealth()
+    {
+        return maxHealth;
+    }
+
+    public void TakeDamage(int amount)
+    {
+        health -= amount;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        BaseProjectile baseProjectile = other.gameObject.GetComponentInChildren<BaseProjectile>();
+        if (baseProjectile != null)
+        {
+            TakeDamage(baseProjectile.GetDamage());
+            Destroy(baseProjectile.gameObject);
+        }
     }
 }

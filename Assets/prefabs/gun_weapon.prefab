@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1685978254038705858, guid: 64fd15854fd3ea6488857fe201161966, type: 3}
   cooldown: 0.5
-  projectileOffset: 3
+  projectileOffset: 1.5
   weaponType: 1
 --- !u!1 &1685978254038705858
 GameObject:
