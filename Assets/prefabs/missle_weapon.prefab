@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1407077997108400558}
   - component: {fileID: 641953008510512146}
-  - component: {fileID: 1549160818307939894}
+  - component: {fileID: 7417046090327968053}
   m_Layer: 0
-  m_Name: sword
+  m_Name: missile launcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,14 +25,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 936137609453226080}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 3.25, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 3.4, y: 3.4, z: 3.4}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1685978254038705857}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &641953008510512146
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 866147997
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6c23cd00e7290c7449dc3260369277a5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 07628ecd1310e7f438c08a906c621772, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1549160818307939894
+--- !u!114 &7417046090327968053
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,13 +94,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 936137609453226080}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aec022aef0848f6a13cf71903add50f, type: 3}
+  m_Script: {fileID: 11500000, guid: f3f9187d6af2eb24d957fd115bc62eaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 1685978254038705858, guid: 2d5da49bd09f1ac479acf6a596172a68, type: 3}
+  projectilePrefab: {fileID: 1685978254038705858, guid: 3c50f24ebe8cf8d42b82177994b35bcf, type: 3}
   cooldown: 2
-  projectileOffset: 0
-  weaponType: 0
+  projectileOffset: 0.5
+  weaponType: 3
 --- !u!1 &1685978254038705858
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1685978254038705857}
   m_Layer: 0
-  m_Name: sword_weapon
+  m_Name: missle_weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

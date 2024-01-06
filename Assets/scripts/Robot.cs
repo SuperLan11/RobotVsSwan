@@ -15,6 +15,8 @@ public class Robot : MonoBehaviour
     private WeaponType currentWeaponLeft = WeaponType.SWORD;
     private WeaponType currentWeaponRight = WeaponType.NONE;
     public Dictionary<WeaponType, int> inventory = new();
+    [SerializeField] private GameObject sawPrefab;
+    [SerializeField] private GameObject misslePrefab;
     public int eggs;
     void Start()
     {
@@ -120,6 +122,10 @@ public class Robot : MonoBehaviour
                 return Instantiate(gunPrefab);
             case WeaponType.NONE:
                 return Instantiate(nullWeaponPrefab);
+            case WeaponType.SAW:
+                return Instantiate(sawPrefab);
+            case WeaponType.MISSLE:
+                return Instantiate(misslePrefab);
             default:
                 throw new System.Exception("Invalid weapon type");
         }

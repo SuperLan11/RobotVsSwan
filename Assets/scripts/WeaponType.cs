@@ -1,4 +1,4 @@
 public enum WeaponType
 {
-    SWORD, GUN, NONE
+    SWORD, GUN, NONE, MISSLE, SAW
 }

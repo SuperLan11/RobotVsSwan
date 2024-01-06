@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class redSwanScript : MonoBehaviour
+public class redSwanScript : Swan
 {
 
     public Rigidbody2D rigidBody;

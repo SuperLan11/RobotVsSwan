@@ -11,7 +11,7 @@ public class Projectile : MonoBehaviour, IProjectile
     {
         Destroy(transform.root.gameObject, 5);
     }
-    void Update()
+    protected virtual void Update()
     {
         transform.position += (Vector3) velocity * Time.deltaTime * speed;
     }

@@ -7,7 +7,8 @@ public class ProjectileWeapon : Weapon
     protected float currentCooldown = 0;
     public float projectileOffset;
     public WeaponType weaponType;
-    void Start()
+
+    public virtual void Start()
     {
         pivot = transform.parent.gameObject;
     }
