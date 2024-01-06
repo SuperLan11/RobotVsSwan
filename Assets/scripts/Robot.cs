@@ -14,12 +14,18 @@ public class Robot : MonoBehaviour
     [SerializeField] private GameObject gunPrefab;
     private WeaponType currentWeaponLeft = WeaponType.SWORD;
     private WeaponType currentWeaponRight = WeaponType.NONE;
+    public Dictionary<WeaponType, int> inventory = new();
+    public int eggs;
     void Start()
     {
         weaponMounts[WeaponSlot.RIGHT] = rightWeaponMount;
         weaponMounts[WeaponSlot.LEFT] = leftWeaponMount;
         SetWeapon(WeaponSlot.RIGHT, WeaponType.NONE);
         SetWeapon(WeaponSlot.LEFT, WeaponType.SWORD);
+        foreach (WeaponType type in System.Enum.GetValues(typeof(WeaponType)))
+        {
+            inventory[type] = 0;
+        }
     }
 
     public static Robot instance;
@@ -123,6 +129,7 @@ public class Robot : MonoBehaviour
     {
         if (weapons.ContainsKey(slot))
         {
+            inventory[weapons[slot].GetWeaponType()] += 1;
             Destroy(weaponMounts[slot].transform.GetChild(0).gameObject);
         }
         GameObject weaponObject = createWeapon(type);

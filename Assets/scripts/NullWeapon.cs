@@ -16,4 +16,9 @@ public class NullWeapon : Weapon
     {
         
     }
+
+    public override WeaponType GetWeaponType()
+    {
+        return WeaponType.NONE;
+    }
 }

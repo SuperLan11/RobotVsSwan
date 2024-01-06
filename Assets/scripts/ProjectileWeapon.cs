@@ -6,6 +6,7 @@ public class ProjectileWeapon : Weapon
     public float cooldown;
     protected float currentCooldown = 0;
     public float projectileOffset;
+    public WeaponType weaponType;
     void Start()
     {
         pivot = transform.parent.gameObject;
@@ -39,5 +40,10 @@ public class ProjectileWeapon : Weapon
     public override void ResetDirection()
     {
         pivot.transform.rotation = Quaternion.Euler(0, 0, 0);
+    }
+
+    public override WeaponType GetWeaponType()
+    {
+        return weaponType;
     }
 }
