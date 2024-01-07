@@ -1007,7 +1007,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -330.73425, y: 0}
+  m_AnchoredPosition: {x: -330.735, y: 0}
   m_SizeDelta: {x: 846.4, y: -2.2}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &691523589
@@ -1219,7 +1219,7 @@ MonoBehaviour:
   editorCamera: {fileID: 1267016634}
   editorRobotSpawn: {fileID: 806093087}
   gameRobotSpawn: {fileID: 2014600230}
-  endRoundRewards: 050000000600000000000000
+  endRoundRewards: 060000000600000000000000
   lastRoundWasWin: 0
 --- !u!1 &763864679
 GameObject:
@@ -2569,8 +2569,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 325310425}
   m_HandleRect: {fileID: 325310424}
   m_Direction: 0
-  m_Value: -0.0000039605347
-  m_Size: 0.7815099
+  m_Value: -0.00000016502227
+  m_Size: 0.781506
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

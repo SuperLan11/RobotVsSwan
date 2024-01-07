@@ -7,13 +7,13 @@ public class MainMenu : MonoBehaviour
 {
     public AudioSource title;
     public void playGame()
-    {
+    {     
         SceneManager.LoadSceneAsync("TestScene");
         Destroy(gameObject);
     }
 
     public void loadTutorial()
-    {
+    {        
         SceneManager.LoadSceneAsync("Tutorial");
     }
 
