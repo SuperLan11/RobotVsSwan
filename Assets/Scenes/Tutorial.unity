@@ -186,8 +186,9 @@ MonoBehaviour:
 
 
     Use
-    the left and right mouse buttons to shoot the left and right weapons respectively.
-    Each weapon has a different cooldown time before you can use it again.'
+    the left and right mouse buttons to shoot the left and right weapons respectively
+    and wasd to move. Each weapon has a different cooldown time before you can use
+    it again.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
