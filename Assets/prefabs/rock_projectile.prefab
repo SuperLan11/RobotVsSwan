@@ -125,8 +125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
-  speed: 3
-  damage: 16
+  speed: 4
+  damage: 11
   sound: rock_throw
   spinRate: 100
 --- !u!1 &1685978254038705858
