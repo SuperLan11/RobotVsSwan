@@ -19,6 +19,8 @@ public class RoundManager : MonoBehaviour
 
     public GameObject editorRobotSpawn;
     public GameObject gameRobotSpawn;
+
+    public int[] endRoundRewards;
     
     void Awake()
     {
@@ -44,6 +46,7 @@ public class RoundManager : MonoBehaviour
     
     void StartEditor()
     {
+        Robot.instance.eggs += endRoundRewards[roundNumber - 1];
         roundState = RoundState.EDITOR;
         Robot.instance.transform.position = editorRobotSpawn.transform.position;
         Robot.instance.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
