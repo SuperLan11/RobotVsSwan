@@ -125,8 +125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
-  speed: 5
-  damage: 3
+  speed: 6
+  damage: 16
   sound: light_beam
 --- !u!1 &1685978254038705858
 GameObject:

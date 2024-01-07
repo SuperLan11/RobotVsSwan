@@ -125,8 +125,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
-  speed: 5
-  damage: 3
+  speed: 7
+  damage: 8
+  sound: 
 --- !u!1 &1685978254038705858
 GameObject:
   m_ObjectHideFlags: 0
