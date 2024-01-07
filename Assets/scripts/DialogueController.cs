@@ -8,6 +8,13 @@ public class DialogueController : MonoBehaviour
     public string[] texts;
     private int index = 0;
     
+    public static DialogueController instance;
+
+    void Awake()
+    {
+        instance = this;
+    }
+
     private IEnumerator Cutscene()
     {
         for (int i = index; i < index + 3; i++)
@@ -34,8 +41,9 @@ public class DialogueController : MonoBehaviour
         }
         //FindObjectOfType<AudioManager>().Stop("Opening Cutscene");
         index += 3;
+        RoundManager.instance.EndDialogue();
     }
-    public void Start()
+    public void StartCutscene()
     {
         StartCoroutine(Cutscene());
     }

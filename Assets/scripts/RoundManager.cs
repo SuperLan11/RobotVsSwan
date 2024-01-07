@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RoundManager : MonoBehaviour
 {
@@ -38,9 +39,11 @@ public class RoundManager : MonoBehaviour
         }
         Robot.instance.transform.position = gameRobotSpawn.transform.position;
         Robot.instance.health = Robot.instance.GetMaxHealth();
+        dialogueUI.SetActive(true);
+        DialogueController.instance.StartCutscene();
     }
 
-    void EndDialogue()
+    public void EndDialogue()
     {
         roundState = RoundState.GAME;
     }
@@ -67,11 +70,19 @@ public class RoundManager : MonoBehaviour
     {
         fightUI.SetActive(roundState == RoundState.GAME);
         editorUI.SetActive(roundState == RoundState.EDITOR);
-        gameCamera.SetActive(roundState == RoundState.GAME);
+        gameCamera.SetActive(roundState != RoundState.EDITOR);
         editorCamera.SetActive(roundState == RoundState.EDITOR);
+        dialogueUI.SetActive(roundState == RoundState.DIALOGUE);
         if (roundState == RoundState.GAME && FindObjectsOfType<Swan>().Length == 0)
         {
-            StartEditor();
+            if (roundNumber == 3)
+            {
+                SceneManager.LoadScene("Win");
+            }
+            else
+            {
+                StartEditor();
+            }
         }
     }
 }

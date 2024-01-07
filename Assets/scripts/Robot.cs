@@ -41,10 +41,10 @@ public class Robot : MonoBehaviour, IHealth
     
     void Update()
     {
-        bool isEditor = RoundManager.instance.roundState == RoundState.EDITOR;
+        bool isGame = RoundManager.instance.roundState == RoundState.GAME;
         foreach (WeaponSlot slot in System.Enum.GetValues(typeof(WeaponSlot)))
         {
-            if (!isEditor)
+            if (isGame)
             {
                 weapons[slot].PointAt(Camera.main.ScreenToWorldPoint(Input.mousePosition));
             }
@@ -54,7 +54,7 @@ public class Robot : MonoBehaviour, IHealth
             }
         }
 
-        if (!isEditor)
+        if (isGame)
         {
             Move();
             processWeaponChanges();
