@@ -19,14 +19,14 @@ public class AudioManager : MonoBehaviour{
         {
             Destroy(gameObject);
         }
-        /*instance = this;
+        //instance = Destroy(gameObject(;
         foreach(Sound s in sounds){
             s.src = gameObject.AddComponent<AudioSource>();
             s.src.clip = s.clip;
             s.src.volume = s.volume;
             s.src.pitch = 1;
             s.src.Stop();
-        }*/
+        }
     }
     
     public void Play(string soundName)
