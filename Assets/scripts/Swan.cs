@@ -155,7 +155,7 @@ public class Swan : MonoBehaviour, IHealth
     {
         hurtTimer += 0.1f;
         health -= amount;
-        if (true)
+        if (health <= 0)
         {
             AudioManager.instance.Play("swan_death");
             Destroy(gameObject);
