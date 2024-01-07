@@ -7,17 +7,26 @@ using System;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour{
-    public Sound[] sounds;
+    public Sound[] sounds;    
     
-    void Awake(){
-        instance = this;
+    void Awake(){       
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        /*instance = this;
         foreach(Sound s in sounds){
             s.src = gameObject.AddComponent<AudioSource>();
             s.src.clip = s.clip;
             s.src.volume = s.volume;
             s.src.pitch = 1;
             s.src.Stop();
-        }
+        }*/
     }
     
     public void Play(string soundName)
