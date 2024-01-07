@@ -490,6 +490,8 @@ GameObject:
   m_Component:
   - component: {fileID: 494339569}
   - component: {fileID: 494339570}
+  - component: {fileID: 494339584}
+  - component: {fileID: 494339585}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -525,12 +527,206 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - clip: {fileID: 0}
-    volume: 0
+  - clip: {fileID: 8300000, guid: 067c68d7af2bea944ae54843f147721c, type: 3}
+    volume: 0.5
     pitch: 0
-    name: 
+    name: chainsaw
     src: {fileID: 0}
     loop: 0
+  - clip: {fileID: 8300000, guid: 3fbc813ecb037614487a19b77a1b0cc5, type: 3}
+    volume: 0.5
+    pitch: 0
+    name: equip_upgrade
+    src: {fileID: 0}
+    loop: 0
+  - clip: {fileID: 8300000, guid: b6c14feffce03ce4fb574979dd27a41f, type: 3}
+    volume: 0.5
+    pitch: 0
+    name: HONK
+    src: {fileID: 0}
+    loop: 0
+  - clip: {fileID: 8300000, guid: c7b7e5429eceb6549819b15aa64c9f8b, type: 3}
+    volume: 0.5
+    pitch: 0
+    name: laser_eyes
+    src: {fileID: 0}
+    loop: 0
+  - clip: {fileID: 8300000, guid: 14bd95d1f3de9014da8b15005998a558, type: 3}
+    volume: 0.5
+    pitch: 0
+    name: light_beam
+    src: {fileID: 0}
+    loop: 0
+  - clip: {fileID: 8300000, guid: e762821de82559e47903c7fa4d5fff56, type: 3}
+    volume: 0.5
+    pitch: 0
+    name: missile_fire
+    src: {fileID: 0}
+    loop: 0
+  - clip: {fileID: 8300000, guid: ddd500c6fb129d9419f0653acfe2e574, type: 3}
+    volume: 0.5
+    pitch: 0
+    name: missile_homing
+    src: {fileID: 0}
+    loop: 0
+  - clip: {fileID: 8300000, guid: 1c1a94179cb58414f972761541ddec2a, type: 3}
+    volume: 0.5
+    pitch: 0
+    name: missile_impact
+    src: {fileID: 0}
+    loop: 0
+  - clip: {fileID: 8300000, guid: a185814cc03dbad40bde3ab51e909fcc, type: 3}
+    volume: 0.5
+    pitch: 0
+    name: poison_breath
+    src: {fileID: 0}
+    loop: 0
+  - clip: {fileID: 8300000, guid: 7dd6e6cc6f190904ca784f91d8426e54, type: 3}
+    volume: 0.5
+    pitch: 0
+    name: robot_attach
+    src: {fileID: 0}
+    loop: 0
+  - clip: {fileID: 8300000, guid: 26cca7baa9941a043a3925c01a1afaa2, type: 3}
+    volume: 0.5
+    pitch: 0
+    name: robot_damage
+    src: {fileID: 0}
+    loop: 0
+  - clip: {fileID: 8300000, guid: 2c972a6851e4cb447a2e3f49537928e1, type: 3}
+    volume: 0.5
+    pitch: 0
+    name: rock_throw
+    src: {fileID: 0}
+    loop: 0
+  - clip: {fileID: 8300000, guid: 496468d5919876b4aa911e60e820cc88, type: 3}
+    volume: 1
+    pitch: 0
+    name: swan_death
+    src: {fileID: 0}
+    loop: 0
+  - clip: {fileID: 8300000, guid: 531bdd607cf2b994480b87cca4c952e9, type: 3}
+    volume: 0.5
+    pitch: 0
+    name: sword_throw
+    src: {fileID: 0}
+    loop: 0
+  - clip: {fileID: 8300000, guid: 6a5504135663ca3478423cd57e990fce, type: 3}
+    volume: 0.5
+    pitch: 0
+    name: win_game
+    src: {fileID: 0}
+    loop: 0
+  - clip: {fileID: 8300000, guid: 2112b2a3159a61f46ab0e9f11fb74603, type: 3}
+    volume: 0.31
+    pitch: 0
+    name: laser_shot
+    src: {fileID: 0}
+    loop: 0
+--- !u!81 &494339584
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494339568}
+  m_Enabled: 1
+--- !u!82 &494339585
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494339568}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: cfed8b0c3efadff4ab8b29e6c64f0249, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.39
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,7 +737,6 @@ GameObject:
   m_Component:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
-  - component: {fileID: 519420029}
   m_Layer: 0
   m_Name: Game Camera
   m_TagString: MainCamera
@@ -549,14 +744,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &519420029
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -905,7 +1092,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -330.7343, y: 0}
+  m_AnchoredPosition: {x: -330.73495, y: 0}
   m_SizeDelta: {x: 846.4, y: -2.2}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &691523589
@@ -1778,7 +1965,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1267016637}
   - component: {fileID: 1267016636}
-  - component: {fileID: 1267016635}
   m_Layer: 0
   m_Name: Editor Camera
   m_TagString: MainCamera
@@ -1786,14 +1972,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!81 &1267016635
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1267016634}
-  m_Enabled: 1
 --- !u!20 &1267016636
 Camera:
   m_ObjectHideFlags: 0
@@ -2468,7 +2646,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 325310425}
   m_HandleRect: {fileID: 325310424}
   m_Direction: 0
-  m_Value: -0.00000363049
+  m_Value: -0.00000016502227
   m_Size: 0.7815099
   m_NumberOfSteps: 0
   m_OnValueChanged:

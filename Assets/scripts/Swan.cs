@@ -116,11 +116,12 @@ public class Swan : MonoBehaviour, IHealth
     {
         while (true)
         {
-            if (Random.Range(0f, 1f) < Time.deltaTime * dashChance)
+            float criticalHealthMultiplier = isCriticalHealth() ? 10f : 1;
+            if (Random.Range(0f, 1f) < Time.deltaTime * dashChance * criticalHealthMultiplier)
             {
                 yield return DashAt(Robot.instance.transform.position);
             }
-            if (Random.Range(0f, 1f) < Time.deltaTime * shootChance)
+            if (Random.Range(0f, 1f) < Time.deltaTime * shootChance * criticalHealthMultiplier)
             {
                 yield return Shoot();
             }
@@ -142,12 +143,16 @@ public class Swan : MonoBehaviour, IHealth
     {
         return maxHealth;
     }
+    
+    public float hurtTimer = 0;
 
     public void TakeDamage(int amount)
     {
+        hurtTimer += 0.1f;
         health -= amount;
         if (health <= 0)
         {
+            AudioManager.instance.Play("swan_death");
             Destroy(gameObject);
         }
     }
@@ -159,6 +164,24 @@ public class Swan : MonoBehaviour, IHealth
         {
             TakeDamage(baseProjectile.GetDamage());
             Destroy(baseProjectile.gameObject);
+        }
+    }
+
+    bool isCriticalHealth()
+    {
+        return ((float)health / maxHealth) < 0.33f;
+    }
+
+    void Update()
+    {
+        hurtTimer = Mathf.Max(0, hurtTimer - Time.deltaTime);
+        if (hurtTimer > 0 || isCriticalHealth())
+        {
+            GetComponent<SpriteRenderer>().color = new Color(1f, 0.5f, 0.5f, 1f);
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().color = Color.white;
         }
     }
 }

@@ -117,6 +117,8 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   speed: 10
   damage: 15
+  sound: chainsaw
+  spinRate: 0
 --- !u!1 &1685978254038705858
 GameObject:
   m_ObjectHideFlags: 0

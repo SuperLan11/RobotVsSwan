@@ -6,6 +6,7 @@ public class MissileProjectile : BaseProjectile
     public int damage;
     public override void Fire(Vector2 direction, float offset)
     {
+        AudioManager.instance.Play("missile_fire");
         transform.position += (Vector3) direction * offset;
         angle = Vector2.SignedAngle(Vector2.up, direction);
     }

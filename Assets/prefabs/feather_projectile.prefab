@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3579382941120857522}
   - component: {fileID: 8876399472954784672}
   m_Layer: 10
-  m_Name: rock
+  m_Name: feather
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,6 +127,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   speed: 5
   damage: 3
+  sound: 
 --- !u!1 &1685978254038705858
 GameObject:
   m_ObjectHideFlags: 0

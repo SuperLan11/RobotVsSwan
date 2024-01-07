@@ -127,6 +127,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   speed: 5
   damage: 3
+  sound: sword_throw
 --- !u!1 &1685978254038705858
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class Projectile : BaseProjectile
     public Vector2 velocity = Vector2.zero;
     public float speed;
     public int damage;
+    public string sound;
 
     void Start()
     {
@@ -19,6 +20,7 @@ public class Projectile : BaseProjectile
 
     public override void Fire(Vector2 direction, float offset)
     {
+        AudioManager.instance.Play(sound);
         velocity = direction.normalized;
         transform.position += (Vector3) (direction).normalized * offset;
         //set rotation

@@ -46,6 +46,7 @@ public class RoundManager : MonoBehaviour
     {
         roundState = RoundState.EDITOR;
         Robot.instance.transform.position = editorRobotSpawn.transform.position;
+        Robot.instance.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
 
     private void Start()
