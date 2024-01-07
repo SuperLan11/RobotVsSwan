@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     public void playGame()
     {
         SceneManager.LoadSceneAsync("TestScene");
-        Destroy(title);
+        Destroy(gameObject);
     }
 
     public void loadTutorial()
