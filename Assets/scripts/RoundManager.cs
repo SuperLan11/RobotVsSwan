@@ -13,6 +13,7 @@ public class RoundManager : MonoBehaviour
 
     public GameObject editorUI;
     public GameObject fightUI;
+    public GameObject dialogueUI;
 
     public GameObject gameCamera;
     public GameObject editorCamera;
@@ -30,13 +31,18 @@ public class RoundManager : MonoBehaviour
     void StartRound(int round)
     {
         roundNumber = round;
-        roundState = RoundState.GAME;
+        roundState = RoundState.DIALOGUE;
         for (int i = 0; i < 3; i++)
         {
             Instantiate(swans[i + (round-1)*3], swanSpots[i].position, Quaternion.identity);
         }
         Robot.instance.transform.position = gameRobotSpawn.transform.position;
         Robot.instance.health = Robot.instance.GetMaxHealth();
+    }
+
+    void EndDialogue()
+    {
+        roundState = RoundState.GAME;
     }
 
     public void StartNextRound()

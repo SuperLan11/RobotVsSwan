@@ -116,6 +116,11 @@ public class Swan : MonoBehaviour, IHealth
     {
         while (true)
         {
+            if (RoundManager.instance.roundState != RoundState.GAME)
+            {
+                yield return null;
+                continue;
+            }
             float criticalHealthMultiplier = isCriticalHealth() ? 10f : 1;
             if (Random.Range(0f, 1f) < Time.deltaTime * dashChance * criticalHealthMultiplier)
             {
