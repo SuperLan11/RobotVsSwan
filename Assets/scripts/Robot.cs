@@ -24,7 +24,7 @@ public class Robot : MonoBehaviour, IHealth
         weaponMounts[WeaponSlot.LEFT] = leftWeaponMount;
         SetWeapon(WeaponSlot.RIGHT, WeaponType.NONE);
         SetWeapon(WeaponSlot.LEFT, WeaponType.SWORD);
-        foreach (WeaponType type in System.Enum.GetValues(typeof(WeaponType)))
+        foreach (WeaponType type in Enum.GetValues(typeof(WeaponType)))
         {
             inventory[type] = 0;
         }
@@ -36,15 +36,15 @@ public class Robot : MonoBehaviour, IHealth
     void Awake()
     {
         instance = this;
+        maxHealth = health;
     }
-
-    public bool editorMode = false;
-
+    
     void Update()
     {
+        bool isEditor = RoundManager.instance.roundState == RoundState.EDITOR;
         foreach (WeaponSlot slot in System.Enum.GetValues(typeof(WeaponSlot)))
         {
-            if (!editorMode)
+            if (!isEditor)
             {
                 weapons[slot].PointAt(Camera.main.ScreenToWorldPoint(Input.mousePosition));
             }
@@ -54,7 +54,7 @@ public class Robot : MonoBehaviour, IHealth
             }
         }
 
-        if (!editorMode)
+        if (!isEditor)
         {
             Move();
             processWeaponChanges();
