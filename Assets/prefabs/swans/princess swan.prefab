@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 37985888277861809, guid: f8d4464d7490cfa4995b22908146f652, type: 3}
       propertyPath: health
-      value: 120
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 37985888277861809, guid: f8d4464d7490cfa4995b22908146f652, type: 3}
       propertyPath: dashPose
@@ -21,7 +21,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 84840b2015c052941bec1f351d9563ee, type: 3}
     - target: {fileID: 37985888277861809, guid: f8d4464d7490cfa4995b22908146f652, type: 3}
       propertyPath: shootChance
-      value: 0.7
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 37985888277861809, guid: f8d4464d7490cfa4995b22908146f652, type: 3}
       propertyPath: projectilePrefab
