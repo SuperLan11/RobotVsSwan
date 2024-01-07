@@ -32,6 +32,8 @@ public class RoundManager : MonoBehaviour
 
     void StartRound(int round)
     {
+        AudioManager.instance.Stop("editor_music");
+        AudioManager.instance.Play("main_music");
         roundNumber = round;
         roundState = RoundState.DIALOGUE;
         for (int i = 0; i < 3; i++)
@@ -56,6 +58,8 @@ public class RoundManager : MonoBehaviour
     
     void StartEditor(bool win = true)
     {
+        AudioManager.instance.Play("editor_music");
+        AudioManager.instance.Stop("main_music");
         if (win) Robot.instance.eggs += endRoundRewards[roundNumber - 1];
         if (!win) roundNumber--;
         roundState = RoundState.EDITOR;
