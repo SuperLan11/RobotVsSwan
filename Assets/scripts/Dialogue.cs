@@ -10,17 +10,17 @@ public class Dialogue : MonoBehaviour
     
     public GameObject portrait;
     public GameObject selectionIndicator;
-    public int dialogueIndex = 0;
+    private int swanIndex;
 
     void Start()
     {
     }
     
-    public void ChangeDialogue(string newDialogue)
+    public void ChangeDialogue(string newDialogue, int swanIndex)
     {
         progress = 0;
         dialogue = newDialogue;
-        dialogueIndex++;
+        this.swanIndex = swanIndex;
     }
 
     public float progress;
@@ -33,7 +33,7 @@ public class Dialogue : MonoBehaviour
         progress = Mathf.Min(length, progress);
         string text = dialogue.Substring(0, (int) (progress + 0.01f));
         GetComponentInChildren<TextMeshProUGUI>().text = text;
-        portrait.GetComponent<Image>().sprite = swans[dialogueIndex - 1];
+        portrait.GetComponent<Image>().sprite = swans[swanIndex];
         selectionIndicator.SetActive(Finished());
     }
     

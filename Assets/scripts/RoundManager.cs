@@ -23,6 +23,7 @@ public class RoundManager : MonoBehaviour
     public GameObject gameRobotSpawn;
 
     public int[] endRoundRewards;
+    public bool lastRoundWasWin;
     
     void Awake()
     {
@@ -40,7 +41,7 @@ public class RoundManager : MonoBehaviour
         Robot.instance.transform.position = gameRobotSpawn.transform.position;
         Robot.instance.health = Robot.instance.GetMaxHealth();
         dialogueUI.SetActive(true);
-        DialogueController.instance.StartCutscene();
+        DialogueController.instance.StartCutscene(roundNumber);
     }
 
     public void EndDialogue()
@@ -53,19 +54,21 @@ public class RoundManager : MonoBehaviour
         StartRound(roundNumber + 1);
     }
     
-    void StartEditor()
+    void StartEditor(bool win = true)
     {
-        Robot.instance.eggs += endRoundRewards[roundNumber - 1];
+        if (win) Robot.instance.eggs += endRoundRewards[roundNumber - 1];
+        if (!win) roundNumber--;
         roundState = RoundState.EDITOR;
         Robot.instance.transform.position = editorRobotSpawn.transform.position;
         Robot.instance.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        lastRoundWasWin = win;
     }
 
     private void Start()
     {
         StartRound(1);
     }
-
+    
     void Update()
     {
         fightUI.SetActive(roundState == RoundState.GAME);
@@ -82,6 +85,15 @@ public class RoundManager : MonoBehaviour
             else
             {
                 StartEditor();
+            }
+        }
+
+        if (Robot.instance.health <= 0 && roundState == RoundState.GAME)
+        {
+            StartEditor(win: false);
+            foreach (Swan swan in FindObjectsOfType<Swan>())
+            {
+                Destroy(swan.gameObject);
             }
         }
     }

@@ -6,7 +6,6 @@ public class DialogueController : MonoBehaviour
     public Dialogue dialogue;
 
     public string[] texts;
-    private int index = 0;
     
     public static DialogueController instance;
 
@@ -15,12 +14,12 @@ public class DialogueController : MonoBehaviour
         instance = this;
     }
 
-    private IEnumerator Cutscene()
+    private IEnumerator Cutscene(int index)
     {
         for (int i = index; i < index + 3; i++)
         {
             string text = texts[i];
-            dialogue.ChangeDialogue(text);
+            dialogue.ChangeDialogue(text, i);
             while (true)
             {
                 yield return null;
@@ -43,8 +42,8 @@ public class DialogueController : MonoBehaviour
         index += 3;
         RoundManager.instance.EndDialogue();
     }
-    public void StartCutscene()
+    public void StartCutscene(int round)
     {
-        StartCoroutine(Cutscene());
+        StartCoroutine(Cutscene((round - 1) * 3));
     }
 }
