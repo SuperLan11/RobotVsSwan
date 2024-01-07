@@ -116,6 +116,11 @@ public class Swan : MonoBehaviour, IHealth
     {
         while (true)
         {
+            if (RoundManager.instance.roundState != RoundState.GAME)
+            {
+                yield return null;
+                continue;
+            }
             float criticalHealthMultiplier = isCriticalHealth() ? 10f : 1;
             if (Random.Range(0f, 1f) < Time.deltaTime * dashChance * criticalHealthMultiplier)
             {
@@ -150,7 +155,7 @@ public class Swan : MonoBehaviour, IHealth
     {
         hurtTimer += 0.1f;
         health -= amount;
-        if (health <= 0)
+        if (/*health <= 0*/ true)
         {
             AudioManager.instance.Play("swan_death");
             Destroy(gameObject);

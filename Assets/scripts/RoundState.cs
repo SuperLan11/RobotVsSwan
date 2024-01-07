@@ -1,5 +1,5 @@
 
 public enum RoundState
 {
-    EDITOR, GAME
+    EDITOR, GAME, DIALOGUE
 }
