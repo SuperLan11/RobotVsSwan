@@ -19,8 +19,11 @@ public class Projectile : BaseProjectile
 
     public override void Fire(Vector2 direction, float offset)
     {
-        velocity = direction;
-        transform.position += (Vector3) direction * offset;
+        velocity = direction.normalized;
+        transform.position += (Vector3) (direction).normalized * offset;
+        //set rotation
+        float angle = Vector2.SignedAngle(Vector2.up, direction);
+        transform.parent.rotation = Quaternion.Euler(0, 0, transform.parent.rotation.eulerAngles.z + angle);
     }
 
     public override int GetDamage()

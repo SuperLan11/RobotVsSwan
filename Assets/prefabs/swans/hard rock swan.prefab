@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 8308390326153058875}
   - component: {fileID: 37985888277861809}
   m_Layer: 9
-  m_Name: swan
+  m_Name: hard rock swan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -258,6 +258,8 @@ MonoBehaviour:
   shootPose: {fileID: 21300000, guid: c2e806573d441734b91e652496cd115b, type: 3}
   dashSpeed: 10
   dashPose: {fileID: 21300000, guid: c2e806573d441734b91e652496cd115b, type: 3}
+  shootChance: 0.5
+  dashChance: 0
   health: 100
 --- !u!1001 &1380428813796377573
 PrefabInstance:

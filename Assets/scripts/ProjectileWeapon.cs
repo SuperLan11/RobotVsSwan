@@ -20,7 +20,7 @@ public class ProjectileWeapon : Weapon
             return;
         }
         currentCooldown = cooldown;
-        GameObject obj = Instantiate(projectilePrefab, pivot.transform.position, pivot.transform.rotation);
+        GameObject obj = Instantiate(projectilePrefab, pivot.transform.position, Quaternion.identity);
         obj.GetComponentInChildren<BaseProjectile>().Fire(pivot.transform.up, projectileOffset);
     }
 

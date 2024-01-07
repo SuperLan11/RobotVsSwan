@@ -67,6 +67,7 @@ public class Swan : MonoBehaviour, IHealth
     }
 
     public float dashSpeed;
+    public int dashDamage;
     private bool collisionFlag;
     public Sprite dashPose;
     private Sprite originalPose;
@@ -96,6 +97,7 @@ public class Swan : MonoBehaviour, IHealth
         if (robot != null)
         {
             collisionFlag = true;
+            robot.TakeDamage(dashDamage);
         }
     }
 
@@ -108,15 +110,17 @@ public class Swan : MonoBehaviour, IHealth
         maxHealth = health;
     }
 
+    public float shootChance;
+    public float dashChance;
     protected IEnumerator swanAI()
     {
         while (true)
         {
-            /*if (Random.Range(0f, 1f) < Time.deltaTime * 0.25f)
+            if (Random.Range(0f, 1f) < Time.deltaTime * dashChance)
             {
                 yield return DashAt(Robot.instance.transform.position);
-            }*/
-            if (Random.Range(0f, 1f) < Time.deltaTime * 2f)
+            }
+            if (Random.Range(0f, 1f) < Time.deltaTime * shootChance)
             {
                 yield return Shoot();
             }
