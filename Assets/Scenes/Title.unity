@@ -677,7 +677,6 @@ GameObject:
   - component: {fileID: 1334121268}
   - component: {fileID: 1334121271}
   - component: {fileID: 1334121272}
-  - component: {fileID: 1334121273}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -860,19 +859,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1334121273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1334121267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 249b8b8d6ace493a99914974a21a319e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds: []
 --- !u!1 &1446609283
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,6 +871,7 @@ GameObject:
   - component: {fileID: 1446609287}
   - component: {fileID: 1446609286}
   - component: {fileID: 1446609285}
+  - component: {fileID: 1446609288}
   m_Layer: 5
   m_Name: PlayBtn
   m_TagString: Untagged
@@ -957,9 +944,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1334121271}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: playGame
+      - m_Target: {fileID: 1446609288}
+        m_TargetAssemblyTypeName: PlayButton, Assembly-CSharp
+        m_MethodName: play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1007,6 +994,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1446609283}
   m_CullTransparentMesh: 1
+--- !u!114 &1446609288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446609283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f8adc877f534df5a51f022facb94ac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1715178957
 GameObject:
   m_ObjectHideFlags: 0

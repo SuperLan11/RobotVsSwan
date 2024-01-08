@@ -6,10 +6,20 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public AudioSource title;
-    public void playGame()
+    public static MainMenu instance;
+
+    void Awake()
     {
-        SceneManager.LoadSceneAsync("TestScene");
-        Destroy(gameObject);
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+
+        }
     }
 
     public void loadTutorial()
