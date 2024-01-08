@@ -1102,6 +1102,12 @@ MonoBehaviour:
     name: editor_music
     src: {fileID: 0}
     loop: 1
+  - clip: {fileID: 8300000, guid: b2a051e0bf8df8c4b87044dcb16f421f, type: 3}
+    volume: 0.31
+    pitch: 0
+    name: round_3
+    src: {fileID: 0}
+    loop: 1
 --- !u!81 &494339584
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1312,6 +1318,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 3991beb0cfc66d0448ed49a25fc414f0, type: 3}
+    - target: {fileID: 4905967508276958753, guid: cd658cde9a59fb94b9ac2633b5c1e1f6, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4905967508276958753, guid: cd658cde9a59fb94b9ac2633b5c1e1f6, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1749,7 +1759,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -330.735, y: 0}
+  m_AnchoredPosition: {x: -330.73468, y: 0}
   m_SizeDelta: {x: 846.4, y: -2.2}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &691523589
@@ -4033,8 +4043,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 325310425}
   m_HandleRect: {fileID: 325310424}
   m_Direction: 0
-  m_Value: 0
-  m_Size: 0.7815099
+  m_Value: -0.0000016502222
+  m_Size: 0.78150773
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

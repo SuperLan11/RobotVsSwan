@@ -33,8 +33,8 @@ public class RoundManager : MonoBehaviour
     void StartRound(int round)
     {
         AudioManager.instance.Stop("editor_music");
-        AudioManager.instance.Play("main_music");
         roundNumber = round;
+        AudioManager.instance.Play(roundNumber == 3 ? "round_3" : "main_music");
         roundState = RoundState.DIALOGUE;
         for (int i = 0; i < 3; i++)
         {

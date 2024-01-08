@@ -92,6 +92,7 @@ public class WeaponOption : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         {
             WeaponMount mount = collider.gameObject.GetComponent<WeaponMount>();
             Robot.instance.SetWeapon(mount.slot, weaponType);
+            AudioManager.instance.Play("robot_attach");
             if (getInventory() == 0)
             {
                 Robot.instance.eggs -= cost;

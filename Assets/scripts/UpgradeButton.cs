@@ -16,6 +16,7 @@ public abstract class UpgradeButton : MonoBehaviour
             Upgrade(statIncreases[currentLevel]);
             Robot.instance.eggs -= costs[currentLevel];
             currentLevel++;
+            AudioManager.instance.Play("equip_upgrade");
         }
     }
 
