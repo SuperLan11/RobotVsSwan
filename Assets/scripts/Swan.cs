@@ -61,7 +61,7 @@ public class Swan : MonoBehaviour, IHealth
         GetComponent<SpriteRenderer>().sprite = shootPose;
         Face(Robot.instance.transform.position);
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-        projectile.GetComponentInChildren<BaseProjectile>().Fire(Robot.instance.transform.position - transform.position, 0);
+        projectile.GetComponentInChildren<BaseProjectile>().Fire(Robot.instance.transform.position - transform.position, 0, false);
         yield return new WaitForSeconds(shootPoseTime);
         GetComponent<SpriteRenderer>().sprite = originalPose;
     }
@@ -168,6 +168,7 @@ public class Swan : MonoBehaviour, IHealth
         if (baseProjectile != null)
         {
             TakeDamage(baseProjectile.GetDamage());
+            ChargeMeter.instance.RegisterDamage(baseProjectile.GetDamage());
             Destroy(baseProjectile.gameObject);
         }
     }

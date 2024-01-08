@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1407077997108400558}
   - component: {fileID: 641953008510512146}
-  - component: {fileID: 7620520173460507785}
+  - component: {fileID: 5645861101295983522}
   m_Layer: 0
-  m_Name: gun
+  m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 936137609453226080}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.25, z: 0}
-  m_LocalScale: {x: 2.3, y: 2.3, z: 2.3}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1685978254038705857}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 866147997
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 02c80836a022a664b90ee545a6ed9f4d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f15d503e8f09dbd41aed263e39a7428d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7620520173460507785
+--- !u!114 &5645861101295983522
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,13 +94,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 936137609453226080}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3f9187d6af2eb24d957fd115bc62eaa, type: 3}
+  m_Script: {fileID: 11500000, guid: 19ce9d74a40d4359826eed69e16af116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 1685978254038705858, guid: b6aec9a12a3de124294f46f35b56ef5d, type: 3}
-  cooldown: 0.5
-  projectileOffset: 1
-  weaponType: 1
+  projectilePrefab: {fileID: 1685978254038705858, guid: 64fd15854fd3ea6488857fe201161966, type: 3}
+  cooldown: 0
+  projectileOffset: 0
+  weaponType: 5
+  shotsPerBar: 10
+  firing: 0
 --- !u!1 &1685978254038705858
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +113,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1685978254038705857}
   m_Layer: 0
-  m_Name: gun_weapon
+  m_Name: head_weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,7 +128,7 @@ Transform:
   m_GameObject: {fileID: 1685978254038705858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1407077997108400558}

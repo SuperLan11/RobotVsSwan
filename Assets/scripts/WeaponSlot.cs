@@ -1,5 +1,6 @@
 public enum WeaponSlot
 {
     LEFT,
-    RIGHT
+    RIGHT,
+    HEAD
 }

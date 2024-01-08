@@ -8,6 +8,7 @@ public class Projectile : BaseProjectile
     public float speed;
     public int damage;
     public string sound;
+    private bool isRobot;
 
     void Start()
     {
@@ -18,8 +19,9 @@ public class Projectile : BaseProjectile
         transform.position += (Vector3) velocity * Time.deltaTime * speed;
     }
 
-    public override void Fire(Vector2 direction, float offset)
+    public override void Fire(Vector2 direction, float offset, bool robot)
     {
+        isRobot = robot;
         AudioManager.instance.Play(sound);
         velocity = direction.normalized;
         transform.position += (Vector3) (direction).normalized * offset;
@@ -30,6 +32,7 @@ public class Projectile : BaseProjectile
 
     public override int GetDamage()
     {
-        return damage;
+        float multiplier = isRobot ? (1f + (Robot.instance.damagePercentModifier / 100)) : 1f;
+        return (int)(damage * multiplier);
     }
 }

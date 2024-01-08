@@ -4,7 +4,7 @@ public class MissileProjectile : BaseProjectile
 {
     private float angle;
     public int damage;
-    public override void Fire(Vector2 direction, float offset)
+    public override void Fire(Vector2 direction, float offset, bool robot)
     {
         AudioManager.instance.Play("missile_fire");
         transform.position += (Vector3) direction * offset;

@@ -10,6 +10,7 @@ public class Robot : MonoBehaviour, IHealth
     private Dictionary<WeaponSlot, GameObject> weaponMounts = new();
     [SerializeField] private GameObject rightWeaponMount;
     [SerializeField] private GameObject leftWeaponMount;
+    [SerializeField] private GameObject headWeaponMount;
     [SerializeField] private GameObject swordPrefab;
     [SerializeField] private GameObject gunPrefab;
     private WeaponType currentWeaponLeft = WeaponType.SWORD;
@@ -17,13 +18,18 @@ public class Robot : MonoBehaviour, IHealth
     public Dictionary<WeaponType, int> inventory = new();
     [SerializeField] private GameObject sawPrefab;
     [SerializeField] private GameObject misslePrefab;
+    [SerializeField] private GameObject defaultHeadPrefab;
     public int eggs;
+    public int cooldownPercentModifier;
+    public int damagePercentModifier;
     void Start()
     {
         weaponMounts[WeaponSlot.RIGHT] = rightWeaponMount;
         weaponMounts[WeaponSlot.LEFT] = leftWeaponMount;
+        weaponMounts[WeaponSlot.HEAD] = headWeaponMount;
         SetWeapon(WeaponSlot.RIGHT, WeaponType.NONE);
         SetWeapon(WeaponSlot.LEFT, WeaponType.SWORD);
+        SetWeapon(WeaponSlot.HEAD, WeaponType.DEFAULT_HEAD);
         foreach (WeaponType type in Enum.GetValues(typeof(WeaponType)))
         {
             inventory[type] = 0;
@@ -82,17 +88,22 @@ public class Robot : MonoBehaviour, IHealth
     {
         if (Input.GetMouseButton(0))
         {
-            weapons[WeaponSlot.LEFT].Shoot();
+            weapons[WeaponSlot.LEFT].Shoot(true);
         }
         if (Input.GetMouseButton(1))
         {
-            weapons[WeaponSlot.RIGHT].Shoot();
+            weapons[WeaponSlot.RIGHT].Shoot(true);
+        }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            weapons[WeaponSlot.HEAD].Shoot(true);
         }
     }
 
     void processWeaponChanges()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        /*if (Input.GetKeyDown(KeyCode.Q))
         {
             currentWeaponLeft = (WeaponType)(((int)currentWeaponLeft + 1) % 3);
             SetWeapon(WeaponSlot.LEFT, currentWeaponLeft);
@@ -101,7 +112,7 @@ public class Robot : MonoBehaviour, IHealth
         {
             currentWeaponRight = (WeaponType)(((int)currentWeaponRight + 1) % 3);
             SetWeapon(WeaponSlot.RIGHT, currentWeaponRight);
-        }
+        }*/
     }
 
     public float speed;
@@ -128,6 +139,8 @@ public class Robot : MonoBehaviour, IHealth
                 return Instantiate(sawPrefab);
             case WeaponType.MISSLE:
                 return Instantiate(misslePrefab);
+            case WeaponType.DEFAULT_HEAD:
+                return Instantiate(defaultHeadPrefab);
             default:
                 throw new System.Exception("Invalid weapon type");
         }
@@ -152,7 +165,7 @@ public class Robot : MonoBehaviour, IHealth
         return health;
     }
 
-    private int maxHealth;
+    public int maxHealth;
     public int GetMaxHealth()
     {
         return maxHealth;
