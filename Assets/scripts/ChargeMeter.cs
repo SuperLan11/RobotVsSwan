@@ -51,6 +51,6 @@ public class ChargeMeter : MonoBehaviour
 
     public void RegisterDamage(int damage)
     {
-        AddProgress(damage / 100f);
+        AddProgress((float)damage / damageForFullBar);
     }
 }

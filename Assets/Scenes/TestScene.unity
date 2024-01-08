@@ -250,7 +250,7 @@ MonoBehaviour:
   - {fileID: 1527976485}
   - {fileID: 1587020142}
   progress: 0
-  damageForFullBar: 0
+  damageForFullBar: 300
 --- !u!114 &209462973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4044,7 +4044,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 325310424}
   m_Direction: 0
   m_Value: -0.0000016502222
-  m_Size: 0.78150773
+  m_Size: 0.7815098
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
