@@ -18,13 +18,8 @@ public class AudioManager : MonoBehaviour{
         else
         {
             Destroy(gameObject);
-<<<<<<< HEAD
         }*/
         instance = this;
-=======
-        }
-        //instance = this;
->>>>>>> c7eacf0d2b4cf42e17fc12762d5bb1f5230280bc
         foreach(Sound s in sounds){
             s.src = gameObject.AddComponent<AudioSource>();
             s.src.clip = s.clip;
