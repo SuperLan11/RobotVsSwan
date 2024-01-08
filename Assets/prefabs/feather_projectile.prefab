@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
-  speed: 5
+  speed: 4
   damage: 10
   sound: 
 --- !u!1 &1685978254038705858
