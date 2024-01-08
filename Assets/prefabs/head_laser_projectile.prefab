@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
   speed: 10
-  damage: 5
+  damage: 3
   sound: laser_shot
 --- !u!61 &7868815211215843225
 BoxCollider2D:

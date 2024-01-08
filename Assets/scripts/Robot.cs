@@ -27,7 +27,7 @@ public class Robot : MonoBehaviour, IHealth
         weaponMounts[WeaponSlot.RIGHT] = rightWeaponMount;
         weaponMounts[WeaponSlot.LEFT] = leftWeaponMount;
         weaponMounts[WeaponSlot.HEAD] = headWeaponMount;
-        SetWeapon(WeaponSlot.RIGHT, WeaponType.NONE);
+        SetWeapon(WeaponSlot.RIGHT, WeaponType.SWORD);
         SetWeapon(WeaponSlot.LEFT, WeaponType.SWORD);
         SetWeapon(WeaponSlot.HEAD, WeaponType.DEFAULT_HEAD);
         foreach (WeaponType type in Enum.GetValues(typeof(WeaponType)))
