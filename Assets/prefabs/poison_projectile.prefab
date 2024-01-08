@@ -126,7 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
   speed: 4
-  damage: 9
+  damage: 10
   sound: poison_breath
 --- !u!1 &1685978254038705858
 GameObject:
