@@ -1,5 +1,3 @@
-# The Making of Swan Showdown
-
 ## Project Background
 Swan Showdown was a game created for a game jam that lasted seven days. 
 The jam had a prompt that included a theme and special object to implement.
