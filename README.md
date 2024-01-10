@@ -1,6 +1,6 @@
 # The Making of Swan Showdown
 Swan Showdown was a game created for a game jam that lasted seven days. 
-The jam had a prompt that included a theme and special object to implement into the game.
+The jam had a prompt that included a theme and special object to implement.
 The theme for the jam was "you are the final boss," and the special object was a swan.
 To fit the theme, the player controls a robot final boss and attacks swan heroes.
 
