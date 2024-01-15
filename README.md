@@ -5,7 +5,7 @@ The theme for the jam was "you are the final boss," and the special object was a
 To fit the theme, the player controls a robot final boss and attacks swan heroes.
 
 ## Team Contributions
-- Craig White: Programmer and Team Lead
+- Craig White: Programmer
 - Landon Johnson: Artist, Balance Designer
 - Elezeid: Audio Designer
 - Al Seppala: Game Writer
